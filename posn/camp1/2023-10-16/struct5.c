@@ -1,5 +1,33 @@
 #include <stdio.h>
 
+struct duration {
+    int y;
+    int m;
+    int d;
+};
+typedef struct duration Time;
+
+int difference(int y, int m, int d){
+    // slightly adapted from https://www.geeksforgeeks.org/find-number-of-days-between-two-given-dates/
+    int i,total = 0;
+    int days[] = { 31, 28, 31, 30, 31, 30,
+       31, 31, 30, 31, 30, 31 };
+    total += (2566-y)*365;
+    for (i = 0; i < m - 1; i++)
+        total += days[i];
+    total += d;
+    return total;
+}
+
+Time ymd(int days){
+    Time t;
+    t.y = days / 365;
+    // too lazy lol
+    t.m = (days-365*t.y)/30;
+    t.d = (days-365*t.y-30*t.m);
+    return t;
+}
+
 int main()
 {
     int i;
@@ -28,14 +56,16 @@ int main()
 
     for(i=0 ; i<5 ; i++)
     {
+        int d = difference(stdrecord[i].std_birth.year,stdrecord[i].std_birth.month,stdrecord[i].std_birth.day);
+        int y = ymd(d).y;
+        int m = ymd(d).m;
+        int ds = ymd(d).d;
         printf("%d ",stdrecord[i].std_id);
         printf("%-15s ",stdrecord[i].std_name);
+        printf("Age: %.2dY%.2dM%.2dD ",y,m,ds);
         printf("%2d ",stdrecord[i].std_birth.day);
         printf("%2d ",stdrecord[i].std_birth.month);
         printf("%4d ",stdrecord[i].std_birth.year);
-        printf("%2d ",stdrecord[i].std_checkin.day);
-        printf("%2d ",stdrecord[i].std_checkin.month);
-        printf("%4d ",stdrecord[i].std_checkin.year);
-        printf("%d\n",stdrecord[i].room);
+        printf("\n");
     }
 }

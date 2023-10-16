@@ -29,31 +29,28 @@ int main()
 
     // sort here
     int i =0;
-    int k=0,l,latest[5] = {-1}, length = sizeof(stdrecord)/sizeof(stdrecord[0]);
+    int k=0,l,latest=0, length = sizeof(stdrecord)/sizeof(stdrecord[0]);
     for (i = 1; i < length; i++){
         if(stdrecord[i].std_checkin.year>stdrecord[latest].std_checkin.year){
-            latest = {-1,-1,-1,-1,-1};
-            k = 0;
-            latest[k] = i;
+
+            latest = i;
         } else if (stdrecord[i].std_checkin.year==stdrecord[latest].std_checkin.year){
             if (stdrecord[i].std_checkin.month>stdrecord[latest].std_checkin.month){
-                latest = {-1,-1,-1,-1,-1};
-                k = 0;
-                latest[k] = i;
+
+                latest = i;
             } else if (stdrecord[i].std_checkin.month==stdrecord[latest].std_checkin.month){
                 if (stdrecord[i].std_checkin.day>stdrecord[latest].std_checkin.day){
-                    latest = {-1,-1,-1,-1,-1};
-                    k = 0;
-                    latest[k] = i;
-                } else if stdrecord[i].std_checkin.day==stdrecord[latest].std_checkin.day){
-                    k++;
-                    latest[k] = i;
+
+                    latest = i;
+                } else if (stdrecord[i].std_checkin.day==stdrecord[latest].std_checkin.day){
+
+                    latest = i;
                 }
             }
         }
     }
 
-    for (l = 0; l < k+1 && latest[k]!=-1;l++;)
-    printf("%s (Check-in: %d-%.2d-%.2d)\n",stdrecord[l].std_name,stdrecord[l].std_checkin.year-543,stdrecord[l].std_checkin.month,stdrecord[l].std_checkin.day);
+    //for (l = 0; l < k+1 && latest[k]!=-1;l++;)
+    printf("%s (Check-in: %d-%.2d-%.2d)\n",stdrecord[latest].std_name,stdrecord[latest].std_checkin.year-543,stdrecord[latest].std_checkin.month,stdrecord[latest].std_checkin.day);
     return 0;
 }
