@@ -13,6 +13,8 @@ As already stated above, mistertfy64 had the opportunity to attend Camp 1 and Ca
 
 There are also POSN training camps for Biology, Chemistry, Physics, Math, Astronomy, Geography, and Earth Science, with the same/similar purposes (to find representatives for Thailand to compete in the International Olympiad in \[insert subject name here\]), although the Astronomy, Geography, and Earth Science camps aren't as popular as the Biology, Chemistry, Physics, Math and Informatics (Computer) counterparts.
 
+This is the code by mistertfy64 written while in the training camps.
+
 ## Changelog/Journal
 
 2024-05-24: Updated `README.md` with a LOT of information. Additionally, I would also like to disclose that I actually also have a seperate private repository for competitive programming practice (before POSN Camp 1) with a lot of more solutions to external (non-camp) problems (e.g., on contest sites) that I've used for additional practice. I don't plan on making my private practice repository public yet (this may change in the future) because I don't want other people to see my cringy commit messages. 
