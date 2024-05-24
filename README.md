@@ -13,7 +13,7 @@ As already stated above, mistertfy64 had the opportunity to attend Camp 1 and Ca
 
 There are also POSN training camps for Biology, Chemistry, Physics, Math, Astronomy, Geography, and Earth Science, with the same/similar purposes (to find representatives for Thailand to compete in the International Olympiad in \[insert subject name here\]), although the Astronomy, Geography, and Earth Science camps aren't as popular as the Biology, Chemistry, Physics, Math and Informatics (Computer) counterparts.
 
-This is the code by mistertfy64 written while in the training camps.
+This is the code written by mistertfy64 while in the training camps.
 
 ## Changelog/Journal
 
